@@ -73,6 +73,7 @@ using Unity.Physics.Systems;
                 var damageSource = DamageSourceLookUp[damageDealingEntity];
                 ECB.AppendToBuffer(damageReceivingEntity, new ReceivedDamage {Value = damageSource.DamageAmount});
                 ECB.AppendToBuffer(damageDealingEntity, new AlreadyDamagedEntity {Value = damageReceivingEntity});
+                ECB.AddComponent(damageReceivingEntity, new IsDamagedTag());
             }
         }
 

@@ -20,6 +20,7 @@ public partial struct CalculateFrameDamageSystem : ISystem
         
         foreach (var (receivedDamages, currentHP, entity) in SystemAPI
                      .Query<DynamicBuffer<ReceivedDamage>, RefRW<CurrentHp>>()
+                     .WithAll<IsDamagedTag>()
                      .WithAll<Simulate>()
                      .WithEntityAccess())
         {

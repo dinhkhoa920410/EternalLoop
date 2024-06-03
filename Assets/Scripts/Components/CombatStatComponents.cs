@@ -31,6 +31,8 @@ public struct ReceivedDamage : IBufferElementData
     public float Value;
 }
 
+public struct IsDamagedTag : IComponentData { }
+
 public struct IsDestroyedTag : IComponentData { }
 
 public struct DestroyOnCollisionTag : IComponentData { }
