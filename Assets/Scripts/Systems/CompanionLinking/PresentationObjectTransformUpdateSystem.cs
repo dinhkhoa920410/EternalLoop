@@ -9,7 +9,7 @@ public partial struct PresentationObjectTransformUpdateSystem : ISystem
     public void OnUpdate(ref SystemState state)
     {
         foreach (var (localToWorld, transform) in SystemAPI.Query<RefRO<LocalToWorld>, SystemAPI.ManagedAPI.UnityEngineComponent<Transform>>()
-                     .WithAll<InitedTag>())
+                     .WithAll<HasLinkedCompanionTag>())
         {
             transform.Value.position = localToWorld.ValueRO.Position;
             transform.Value.rotation = localToWorld.ValueRO.Rotation;

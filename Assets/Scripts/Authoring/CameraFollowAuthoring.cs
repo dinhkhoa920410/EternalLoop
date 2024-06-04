@@ -9,11 +9,11 @@ public class CameraFollowAuthoring : MonoBehaviour
     {
         public override void Bake(CameraFollowAuthoring authoring)
         {
-            var bakingEntity = GetEntity(authoring, TransformUsageFlags.Dynamic);
+            var bakingEntity = GetEntity(authoring, TransformUsageFlags.None);
             
             AddComponent(bakingEntity, new CameraFollowEntity
             {
-                Value = GetEntity(authoring.cameraTarget, TransformUsageFlags.Dynamic)
+                Value = GetEntity(authoring.cameraTarget, TransformUsageFlags.None)
             });
         }
     }

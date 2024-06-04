@@ -11,7 +11,7 @@ public partial struct InitializePresentationObjectSystem : ISystem
     {
         foreach (var entity in SystemAPI.QueryBuilder()
                      .WithAll<LocalToWorld, PresentationGameObject>()
-                     .WithNone<InitedTag>()
+                     .WithNone<HasLinkedCompanionTag>()
                      .Build().ToEntityArray(Allocator.Temp))
         {
             var presentationGameObject = SystemAPI.ManagedAPI.GetComponent<PresentationGameObject>(entity);
@@ -26,7 +26,7 @@ public partial struct InitializePresentationObjectSystem : ISystem
             }
             
             gameObject.AddComponent<EntityGameObject>().AssignEntity(entity, state.World);
-            state.EntityManager.AddComponentData(entity, new InitedTag());
+            state.EntityManager.AddComponentData(entity, new HasLinkedCompanionTag());
 
             var localToWorld = SystemAPI.GetComponent<LocalToWorld>(entity);
 
