@@ -18,7 +18,6 @@ public class MainCharAuthoring : MonoBehaviour
         public override void Bake(MainCharAuthoring authoring)
         {
             var entity = GetEntity(TransformUsageFlags.Dynamic);
-            // AddComponent<MoveSpeed>(entity);
             AddComponent<PlayerTag>(entity);
             AddComponent<PlayerMoveInput>(entity);
             AddComponent(entity, new PlayerMoveSpeed

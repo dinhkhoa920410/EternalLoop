@@ -24,10 +24,4 @@ public partial struct ActualDestroyEntitySystem : ISystem
             ecbEs.DestroyEntity(entity);
         }
     }
-
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state)
-    {
-
-    }
 }
