@@ -29,6 +29,10 @@ public class EnemyAuthoring : MonoBehaviour
                 Value = authoring.maxHealthPoint
             });
             AddBuffer<ReceivedDamage>(entity);
+            AddComponent(entity, new CurrentState
+            {
+                Value = BehaviorState.Moving
+            });
         }
     }
 }
