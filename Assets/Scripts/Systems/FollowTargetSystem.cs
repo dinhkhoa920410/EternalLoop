@@ -1,9 +1,7 @@
-using System.Linq;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine.EventSystems;
 
 [UpdateBefore(typeof(TransformSystemGroup))]
 public partial struct FollowTargetSystem : ISystem

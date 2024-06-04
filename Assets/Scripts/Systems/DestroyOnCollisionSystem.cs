@@ -42,10 +42,4 @@ public partial struct DestroyOnCollisionSystem : ISystem
                 EcbBs.AddComponent<IsDestroyedTag>(triggerEvent.EntityB);
         }
     }
-
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state)
-    {
-
-    }
 }

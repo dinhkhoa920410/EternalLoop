@@ -1,13 +1,13 @@
 using Unity.Entities;
 using UnityEngine;
 
-public class FollowPlayerCameraAuthoring : MonoBehaviour
+public class CameraFollowAuthoring : MonoBehaviour
 {
     [SerializeField] private Transform cameraTarget;
     
-    private class FollowPlayerCameraAuthoringBaker : Baker<FollowPlayerCameraAuthoring>
+    private class FollowPlayerCameraAuthoringBaker : Baker<CameraFollowAuthoring>
     {
-        public override void Bake(FollowPlayerCameraAuthoring authoring)
+        public override void Bake(CameraFollowAuthoring authoring)
         {
             var bakingEntity = GetEntity(authoring, TransformUsageFlags.Dynamic);
             

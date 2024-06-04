@@ -17,7 +17,8 @@ public partial struct ActualDestroyEntitySystem : ISystem
         var ecbSingleton = SystemAPI.GetSingleton<EndSimulationEntityCommandBufferSystem.Singleton>();
         var ecbEs = ecbSingleton.CreateCommandBuffer(state.WorldUnmanaged);
 
-        foreach (var (isDestroyedTag, entity) in SystemAPI.Query<IsDestroyedTag>().WithAll<Simulate>()
+        foreach (var (isDestroyedTag, entity) in SystemAPI.Query<IsDestroyedTag>()
+                     .WithAll<Simulate>()
                      .WithEntityAccess())
         {
             ecbEs.DestroyEntity(entity);

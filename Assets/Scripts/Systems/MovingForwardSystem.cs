@@ -1,16 +1,9 @@
 using Unity.Burst;
 using Unity.Entities;
-using Unity.Mathematics;
 using Unity.Transforms;
 
 public partial struct MovingForwardSystem : ISystem
 {
-    [BurstCompile]
-    public void OnCreate(ref SystemState state)
-    {
-        
-    }
-
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
@@ -21,11 +14,5 @@ public partial struct MovingForwardSystem : ISystem
         {
                 transform.ValueRW.Position += transform.ValueRW.Up() * speed.Value * deltaTime;
         }
-    }
-
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state)
-    {
-
     }
 }

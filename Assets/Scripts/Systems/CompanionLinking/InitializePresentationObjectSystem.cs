@@ -5,6 +5,8 @@ using UnityEngine;
 
 public partial struct InitializePresentationObjectSystem : ISystem
 {
+    
+    
     public void OnUpdate(ref SystemState state)
     {
         foreach (var entity in SystemAPI.QueryBuilder()
@@ -14,7 +16,7 @@ public partial struct InitializePresentationObjectSystem : ISystem
         {
             var presentationGameObject = SystemAPI.ManagedAPI.GetComponent<PresentationGameObject>(entity);
 
-            var gameObject = Object.Instantiate(presentationGameObject.Value);
+            var gameObject = Object.Instantiate(presentationGameObject.Instance);
 
             var components = gameObject.GetComponents(typeof(Component));
             foreach (var component in components)

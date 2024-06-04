@@ -8,7 +8,12 @@ public struct CameraFollowEntity : IComponentData
 
 public class PresentationGameObject : IComponentData
 {
-    public GameObject Value;
+    public GameObject Instance;
 }
 
 public struct InitedTag : IComponentData { }
+
+public class PresentationGameObjectCleanUp : ICleanupComponentData
+{
+    public GameObject Instance;
+}

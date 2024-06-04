@@ -44,10 +44,4 @@ public partial struct CalculateFrameDamageSystem : ISystem
             }
         }
     }
-
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state)
-    {
-
-    }
 }

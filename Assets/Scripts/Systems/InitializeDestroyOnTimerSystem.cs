@@ -1,5 +1,4 @@
 using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
 
 public partial struct DestroyOnTimerSystem : ISystem
@@ -25,11 +24,5 @@ public partial struct DestroyOnTimerSystem : ISystem
                 ecbBs.AddComponent<IsDestroyedTag>(entity);
             }
         }
-    }
-
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state)
-    {
-
     }
 }

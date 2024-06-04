@@ -14,7 +14,7 @@ public class GameObjectCompanionAuthoring : MonoBehaviour
             Entity bakingEntity = GetEntity(TransformUsageFlags.WorldSpace);
             AddComponentObject(bakingEntity, new PresentationGameObject
             {
-                Value = authoring.Prefab
+                Instance = authoring.Prefab
             });
         }
     }
